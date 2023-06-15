@@ -8,7 +8,6 @@ config system virtual-switch
 end
 
 #config system interfaces
-
 #WAN
 {int_WAN}
 #int1
@@ -23,7 +22,6 @@ end
 #intA
 {int_A}
 {dhcp_A}
-
   edit "modem"
       set vdom "root"
       set mode pppoe
@@ -339,7 +337,7 @@ config system global
   set switch-controller enable
   set timezone 26
 end
-#Standart SDAG SIP Alg config (deactivate):
+#Standart SDAG SIP Alg config
 {sipalg}
 
 #Standart SDAG Services:

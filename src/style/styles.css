@@ -310,6 +310,15 @@ body {
 .fortigate .configuration form .object {
   padding: 20px;
 }
+.fortigate .configuration form .object ol {
+  list-style: none;
+}
+.fortigate .configuration form .object ol li {
+  margin: auto;
+  max-width: 280px;
+  display: flex;
+  justify-content: space-between;
+}
 .fortigate .configuration form .object label {
   padding: 0px 25px;
 }
@@ -395,10 +404,6 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.fortigate .configuration form button {
-  position: absolute;
-  bottom: 0;
-}
 .fortigate .textfile {
   margin-top: 20px;
   max-width: 400px;
@@ -440,6 +445,9 @@ body {
   background-color: #f8f8f8;
   font-size: 16px;
   text-align: left;
+}
+.fortigate .textfile .rawconfig textarea .highlight {
+  color: red;
 }
 .fortigate .textfile .rawconfig p {
   text-align: left;

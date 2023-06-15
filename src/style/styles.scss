@@ -192,6 +192,15 @@ body {
       flex-direction: column-reverse;
       .object {
         padding: 20px;
+        ol{
+          list-style: none;
+          li{
+            margin: auto;
+            max-width: 280px;
+            display: flex;
+            justify-content: space-between;
+          }
+        }
         label {
           padding: 0px 25px;
           input{
@@ -288,13 +297,9 @@ body {
           justify-content: space-between;
         }
       }
-      
-      button {
-        position: absolute;
-        bottom: 0;
-      }
     }
   }
+  
   .textfile {
     margin-top: 20px;
     max-width: 400px;
@@ -346,6 +351,10 @@ body {
           //display: inline-block;
           //overflow: hidden;
           //text-overflow: ellipsis;
+          .highlight {
+            color: red;
+          }
+          
       }
 
       p{

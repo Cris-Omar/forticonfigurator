@@ -10,8 +10,6 @@ import Mail from "../components/icons/Mail"
 // Internal Components
 import Ports40F from "../components/ports/Ports40F";
 import Ports60F from "../components/ports/Ports60F";
-import Ports80F from "../components/ports/Ports80F";
-import Ports100F from "../components/ports/Ports100F";
 import Policy from "../components/standardconfigs/Policy"
 import SipAlg from "../components/standardconfigs/SipAlg"
 import Services from "../components/standardconfigs/Services";
@@ -24,8 +22,14 @@ import Int2 from "../components/standardconfigs/portconfig/Int2"
 import DHCPServ2 from "../components/standardconfigs/dhcpconfig/DHCPServ2";
 import Int3 from "../components/standardconfigs/portconfig/Int3"
 import DHCPServ3 from "../components/standardconfigs/dhcpconfig/DHCPServ3";
+import Int4 from "../components/standardconfigs/portconfig/Int4"
+import DHCPServ4 from "../components/standardconfigs/dhcpconfig/DHCPServ4";
+import Int5 from "../components/standardconfigs/portconfig/Int5"
+import DHCPServ5 from "../components/standardconfigs/dhcpconfig/DHCPServ5";
 import IntA from "../components/standardconfigs/portconfig/IntA"
 import DHCPServA from "../components/standardconfigs/dhcpconfig/DHCPServA";
+import IntB from "../components/standardconfigs/portconfig/IntB"
+import DHCPServB from "../components/standardconfigs/dhcpconfig/DHCPServB";
 import IntWAN from "../components/standardconfigs/portconfig/IntWAN"
 
 export default function Fortigate () {
@@ -50,10 +54,14 @@ export default function Fortigate () {
     element.click();
   }
 
-  const { int_1, enableDhcp_1, portAlias_1, ipaddress_1, intNetmask_1, https_1, ping_1, defaultGateway_1, addressRangeFrom_1, addressRangeTo_1, dhcpNetmask_1, dnsServer1_1, dnsServer2_1,
-    int_2, enableDhcp_2,
-    int_3, enableDhcp_3,
-    int_A, enableDhcp_A,
+  const {
+    int_1, enableDhcp_1, portAlias_1,  ipaddress_1, intNetmask_1, https_1, ping_1, defaultGateway_1, addressRangeFrom_1, addressRangeTo_1, dhcpNetmask_1,
+    int_2, enableDhcp_2, portAlias_2,  ipaddress_2, intNetmask_2, https_2, ping_2, defaultGateway_2, addressRangeFrom_2, addressRangeTo_2, dhcpNetmask_2,
+    int_3, enableDhcp_3, portAlias_3,  ipaddress_3, intNetmask_3, https_3, ping_3, defaultGateway_3, addressRangeFrom_3, addressRangeTo_3, dhcpNetmask_3,
+    int_4, enableDhcp_4, portAlias_4,  ipaddress_4, intNetmask_4, https_4, ping_4, defaultGateway_4, addressRangeFrom_4, addressRangeTo_4, dhcpNetmask_4,
+    int_5, enableDhcp_5, portAlias_5,  ipaddress_5, intNetmask_5, https_5, ping_5, defaultGateway_5, addressRangeFrom_5, addressRangeTo_5, dhcpNetmask_5,
+    int_A, enableDhcp_A, portAlias_A,  ipaddress_A, intNetmask_A, https_A, ping_A, defaultGateway_A, addressRangeFrom_A, addressRangeTo_A, dhcpNetmask_A,
+    int_B, enableDhcp_B, portAlias_B,  ipaddress_B, intNetmask_B, https_B, ping_B, defaultGateway_B, addressRangeFrom_B, addressRangeTo_B, dhcpNetmask_B,
     int_WAN
    } = useContext(GlobalVarContext);
 
@@ -69,6 +77,8 @@ export default function Fortigate () {
   const [services, setServices] = useState(true);
   const [vpnUser, setVpnUser] = useState(true);
   const [sipAlg, setSipAlg] = useState(true);
+  const [dnsServer1, setDnsServer1] =  useState('');
+  const [dnsServer2, setDnsServer2] =  useState('');
 
   //handleCheckbox state change
   const handleCheckboxChange = (event) => {
@@ -88,11 +98,13 @@ export default function Fortigate () {
   };
 
   useEffect(() => {
+
     const fetchData = async () => {
       try {
         const response = await axios.get(`http://localhost:3000/configFiles/${selectedConfig}`);
-        console.log(response)
         const regexHostname = new RegExp('{hostname}', 'g');
+        const regexDnsServer1 = new RegExp('{dnsServer1}', 'g');
+        const regexDnsServer2 = new RegExp('{dnsServer2}', 'g');
         const regexIdleTime = new RegExp('{idletimeout}', 'g');
 
         // poort 1
@@ -103,9 +115,56 @@ export default function Fortigate () {
         const regexDhcpNetmask_1 = new RegExp('{dhcpNetmask_1}', 'g')
         const regexAddressRangeFrom_1 = new RegExp('{addressRangeFrom_1}', 'g')
         const regexAddressRangeTo_1 = new RegExp('{addressRangeTo_1}', 'g')
-        const regexDnsServer1_1 = new RegExp('{dnsServer1_1}', 'g')
-        const regexDnsServer2_1 = new RegExp('{dnsServer2_1}', 'g')
-
+        // poort 2
+        const regexPortAlias_2 = new RegExp('{portAlias_2}', 'g')
+        const regexIpaddress_2 = new RegExp('{ipaddress_2}', 'g')
+        const regexIntNetmask_2 = new RegExp('{intNetmask_2}', 'g')
+        const regexDefaultGateway_2 = new RegExp('{defaultGateway_2}', 'g')
+        const regexDhcpNetmask_2 = new RegExp('{dhcpNetmask_2}', 'g')
+        const regexAddressRangeFrom_2 = new RegExp('{addressRangeFrom_2}', 'g')
+        const regexAddressRangeTo_2 = new RegExp('{addressRangeTo_2}', 'g')
+        // poort 3
+        const regexPortAlias_3 = new RegExp('{portAlias_3}', 'g')
+        const regexIpaddress_3 = new RegExp('{ipaddress_3}', 'g')
+        const regexIntNetmask_3 = new RegExp('{intNetmask_3}', 'g')
+        const regexDefaultGateway_3 = new RegExp('{defaultGateway_3}', 'g')
+        const regexDhcpNetmask_3 = new RegExp('{dhcpNetmask_3}', 'g')
+        const regexAddressRangeFrom_3 = new RegExp('{addressRangeFrom_3}', 'g')
+        const regexAddressRangeTo_3 = new RegExp('{addressRangeTo_3}', 'g')
+        // poort 4
+        const regexPortAlias_4 = new RegExp('{portAlias_4}', 'g')
+        const regexIpaddress_4 = new RegExp('{ipaddress_4}', 'g')
+        const regexIntNetmask_4 = new RegExp('{intNetmask_4}', 'g')
+        const regexDefaultGateway_4 = new RegExp('{defaultGateway_4}', 'g')
+        const regexDhcpNetmask_4 = new RegExp('{dhcpNetmask_4}', 'g')
+        const regexAddressRangeFrom_4 = new RegExp('{addressRangeFrom_4}', 'g')
+        const regexAddressRangeTo_4 = new RegExp('{addressRangeTo_4}', 'g')
+        // poort 5
+        const regexPortAlias_5 = new RegExp('{portAlias_5}', 'g')
+        const regexIpaddress_5 = new RegExp('{ipaddress_5}', 'g')
+        const regexIntNetmask_5 = new RegExp('{intNetmask_5}', 'g')
+        const regexDefaultGateway_5 = new RegExp('{defaultGateway_5}', 'g')
+        const regexDhcpNetmask_5 = new RegExp('{dhcpNetmask_5}', 'g')
+        const regexAddressRangeFrom_5 = new RegExp('{addressRangeFrom_5}', 'g')
+        const regexAddressRangeTo_5 = new RegExp('{addressRangeTo_5}', 'g')
+        // poort A
+        const regexPortAlias_A = new RegExp('{portAlias_A}', 'g')
+        const regexIpaddress_A = new RegExp('{ipaddress_A}', 'g')
+        const regexIntNetmask_A = new RegExp('{intNetmask_A}', 'g')
+        const regexDefaultGateway_A = new RegExp('{defaultGateway_A}', 'g')
+        const regexDhcpNetmask_A = new RegExp('{dhcpNetmask_A}', 'g')
+        const regexAddressRangeFrom_A = new RegExp('{addressRangeFrom_A}', 'g')
+        const regexAddressRangeTo_A = new RegExp('{addressRangeTo_A}', 'g')
+        // Poort B
+        const regexPortAlias_B = new RegExp('{portAlias_B}', 'g')
+        const regexIpaddress_B = new RegExp('{ipaddress_B}', 'g')
+        const regexIntNetmask_B = new RegExp('{intNetmask_B}', 'g')
+        const regexDefaultGateway_B = new RegExp('{defaultGateway_B}', 'g')
+        const regexDhcpNetmask_B = new RegExp('{dhcpNetmask_B}', 'g')
+        const regexAddressRangeFrom_B = new RegExp('{addressRangeFrom_B}', 'g')
+        const regexAddressRangeTo_B = new RegExp('{addressRangeTo_B}', 'g')
+        // port WAN
+        // Port WAN2
         const replacedText = response.data
           //replace data comming from "Fortigate.js"
           .replace(regexHostname, hostname)
@@ -126,29 +185,95 @@ export default function Fortigate () {
           .replace(regexDhcpNetmask_1, dhcpNetmask_1)
           .replace(regexAddressRangeFrom_1, addressRangeFrom_1)
           .replace(regexAddressRangeTo_1, addressRangeTo_1)
-          .replace(regexDnsServer1_1, dnsServer1_1)
-          .replace(regexDnsServer2_1, dnsServer2_1)
 
           .replace('{int_2}', int_2 ? Int2 : '')
           .replace('{dhcp_2}', enableDhcp_2 ? DHCPServ2 : '')
+          .replace(regexPortAlias_2, portAlias_2)
+          .replace(regexIpaddress_2, ipaddress_2)
+          .replace(regexIntNetmask_2, intNetmask_2)
+          .replace('{https_2}', https_2 ? "https" : '')
+          .replace('{ping_2}', ping_2 ? "ping" : '')
+          .replace(regexDefaultGateway_2, defaultGateway_2)
+          .replace(regexDhcpNetmask_2, dhcpNetmask_2)
+          .replace(regexAddressRangeFrom_2, addressRangeFrom_2)
+          .replace(regexAddressRangeTo_2, addressRangeTo_2)
+          
           .replace('{int_3}', int_3 ? Int3 : '')
           .replace('{dhcp_3}', enableDhcp_3 ? DHCPServ3 : '')
+          .replace(regexPortAlias_3, portAlias_3)
+          .replace(regexIpaddress_3, ipaddress_3)
+          .replace(regexIntNetmask_3, intNetmask_3)
+          .replace('{https_3}', https_3 ? "https" : '')
+          .replace('{ping_3}', ping_3 ? "ping" : '')
+          .replace(regexDefaultGateway_3, defaultGateway_3)
+          .replace(regexDhcpNetmask_3, dhcpNetmask_3)
+          .replace(regexAddressRangeFrom_3, addressRangeFrom_3)
+          .replace(regexAddressRangeTo_3, addressRangeTo_3)
+
+          .replace('{int_4}', int_4 ? Int4 : '')
+          .replace('{dhcp_4}', enableDhcp_4 ? DHCPServ4 : '')
+          .replace(regexPortAlias_4, portAlias_4)
+          .replace(regexIpaddress_4, ipaddress_4)
+          .replace(regexIntNetmask_4, intNetmask_4)
+          .replace('{https_4}', https_4 ? "https" : '')
+          .replace('{ping_4}', ping_4 ? "ping" : '')
+          .replace(regexDefaultGateway_4, defaultGateway_4)
+          .replace(regexDhcpNetmask_4, dhcpNetmask_4)
+          .replace(regexAddressRangeFrom_4, addressRangeFrom_4)
+          .replace(regexAddressRangeTo_4, addressRangeTo_4)
+
+          .replace('{int_5}', int_5 ? Int5 : '')
+          .replace('{dhcp_5}', enableDhcp_5 ? DHCPServ5 : '')
+          .replace(regexPortAlias_5, portAlias_5)
+          .replace(regexIpaddress_5, ipaddress_5)
+          .replace(regexIntNetmask_5, intNetmask_5)
+          .replace('{https_5}', https_5 ? "https" : '')
+          .replace('{ping_5}', ping_5 ? "ping" : '')
+          .replace(regexDefaultGateway_5, defaultGateway_5)
+          .replace(regexDhcpNetmask_5, dhcpNetmask_5)
+          .replace(regexAddressRangeFrom_5, addressRangeFrom_5)
+          .replace(regexAddressRangeTo_5, addressRangeTo_5)
+
           .replace('{int_A}', int_A ? IntA : '')
           .replace('{dhcp_A}', enableDhcp_A ? DHCPServA : '')
+          .replace(regexPortAlias_A, portAlias_A)
+          .replace(regexIpaddress_A, ipaddress_A)
+          .replace(regexIntNetmask_A, intNetmask_A)
+          .replace('{https_A}', https_A ? "https" : '')
+          .replace('{ping_A}', ping_A ? "ping" : '')
+          .replace(regexDefaultGateway_A, defaultGateway_A)
+          .replace(regexDhcpNetmask_A, dhcpNetmask_A)
+          .replace(regexAddressRangeFrom_A, addressRangeFrom_A)
+          .replace(regexAddressRangeTo_A, addressRangeTo_A)
+
+          .replace('{int_B}', int_B ? IntB : '')
+          .replace('{dhcp_B}', enableDhcp_B ? DHCPServB : '')
+          .replace(regexPortAlias_B, portAlias_B)
+          .replace(regexIpaddress_B, ipaddress_B)
+          .replace(regexIntNetmask_B, intNetmask_B)
+          .replace('{https_B}', https_B ? "https" : '')
+          .replace('{ping_B}', ping_B ? "ping" : '')
+          .replace(regexDefaultGateway_B, defaultGateway_B)
+          .replace(regexDhcpNetmask_B, dhcpNetmask_B)
+          .replace(regexAddressRangeFrom_B, addressRangeFrom_B)
+          .replace(regexAddressRangeTo_B, addressRangeTo_B)
+
           .replace('{int_WAN}', int_WAN ? IntWAN : '')
           setContent(replacedText)
         } catch (error) {
           console.log(error);
         }
-        console.log(defaultGateway_1);
       };
       fetchData();
 
-  }, [selectedConfig, hostname, policy, services, vpnUser, sipAlg, idleTime,
-    int_1, enableDhcp_1, portAlias_1,  ipaddress_1, intNetmask_1, https_1, ping_1, defaultGateway_1, addressRangeFrom_1, addressRangeTo_1, dhcpNetmask_1, dnsServer1_1, dnsServer2_1,
-    int_2, enableDhcp_2,
-    int_3, enableDhcp_3,
-    int_A, enableDhcp_A,
+  }, [selectedConfig, hostname, policy, services, vpnUser, sipAlg, idleTime, dnsServer1, dnsServer2,
+    int_1, enableDhcp_1, portAlias_1,  ipaddress_1, intNetmask_1, https_1, ping_1, defaultGateway_1, addressRangeFrom_1, addressRangeTo_1, dhcpNetmask_1,
+    int_2, enableDhcp_2, portAlias_2,  ipaddress_2, intNetmask_2, https_2, ping_2, defaultGateway_2, addressRangeFrom_2, addressRangeTo_2, dhcpNetmask_2,
+    int_3, enableDhcp_3, portAlias_3,  ipaddress_3, intNetmask_3, https_3, ping_3, defaultGateway_3, addressRangeFrom_3, addressRangeTo_3, dhcpNetmask_3,
+    int_4, enableDhcp_4, portAlias_4,  ipaddress_4, intNetmask_4, https_4, ping_4, defaultGateway_4, addressRangeFrom_4, addressRangeTo_4, dhcpNetmask_4,
+    int_5, enableDhcp_5, portAlias_5,  ipaddress_5, intNetmask_5, https_5, ping_5, defaultGateway_5, addressRangeFrom_5, addressRangeTo_5, dhcpNetmask_5,
+    int_A, enableDhcp_A, portAlias_A,  ipaddress_A, intNetmask_A, https_A, ping_A, defaultGateway_A, addressRangeFrom_A, addressRangeTo_A, dhcpNetmask_A,
+    int_B, enableDhcp_B, portAlias_B,  ipaddress_B, intNetmask_B, https_B, ping_B, defaultGateway_B, addressRangeFrom_B, addressRangeTo_B, dhcpNetmask_B,
     int_WAN
    ]);
 
@@ -163,8 +288,6 @@ export default function Fortigate () {
           <select defaultValue="40F" onChange={e => setSelectedConfig(e.target.value)} >
             <option value="40F">40F</option>
             <option value="60F">60F</option>
-            <option value="80F">80F</option>
-            <option value="100F">100F</option>
           </select>
         </label>
 
@@ -185,8 +308,7 @@ export default function Fortigate () {
 
           {selectedConfig === '40F' && <Ports40F />}
           {selectedConfig === '60F' && <Ports60F />}
-          {selectedConfig === '80F' && <Ports80F />}
-          {selectedConfig === '100F' && <Ports100F />}
+
           <div className="sdagstandards">
             <p>Which SDAG Standards you want to activate?</p>
             <ol>
@@ -230,9 +352,31 @@ export default function Fortigate () {
               </li>
             </ol>
           </div>
+
           {/*idletimeout field*/}
           <div className="object">
-            <label>
+            <ol>
+              <li>
+                DNS Server 1: 
+                <input 
+                  type="text" 
+                  name="dnsServer1" 
+                  value={dnsServer1}
+                  placeholder="1.1.1.1"
+                  onChange={e => setDnsServer1(e.target.value)} 
+                />
+              </li>
+              <li>
+                DNS Server 2: 
+                <input 
+                  type="text" 
+                  name="dnsServer2" 
+                  value={dnsServer2}
+                  placeholder="1.1.1.1"
+                  onChange={e => setDnsServer2(e.target.value)} 
+                />
+              </li>
+              <li>
               idletimeout:
               <input type="text"
                 name="idleTime" 
@@ -240,10 +384,9 @@ export default function Fortigate () {
                 placeholder="in minuten"
                 onChange={e => setIdleTime(e.target.value)} 
               />
-            </label>
+              </li>
+            </ol>
           </div>
-          
-          <button type="reset" value="Reset Form">Reset</button>
         </form>
       </div>
 
