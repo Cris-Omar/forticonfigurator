@@ -34,11 +34,11 @@ export default function Interface5 () {
   return (
 
   <div className="submenu">
-    Port <b>5</b> Configuration
+    Port <b>5</b> configuration
     <form>
       <ol>
         <li>
-          enable:
+          enable
           <input 
               type="checkbox"
               name="int_5"
@@ -67,7 +67,7 @@ export default function Interface5 () {
             />
         </li>
         <li>
-          Subnetz
+          Subnet
           <input 
             type="text" 
             name="intNetmask_5" 
@@ -78,9 +78,9 @@ export default function Interface5 () {
         </li>
           <div className="adminaccess">
             <ol>
-            <p>Admin Access:</p>
+            <p>Admin Access</p>
               <li>
-                https:
+                https
                 <input 
                   type="checkbox"
                   name="https_5"
@@ -89,7 +89,7 @@ export default function Interface5 () {
                   />
               </li>
               <li>
-                Ping:
+                Ping
                 <input 
                   type="checkbox"
                   name="ping_5"
@@ -116,7 +116,7 @@ export default function Interface5 () {
           <form>
             <ol>
             <li>
-                default Gateway:
+                default Gateway
                 <input 
                   type="text" 
                   name="defaultGateway_5" 
@@ -126,7 +126,7 @@ export default function Interface5 () {
                   />
               </li>
               <li>
-                Netmask
+               Subnet
                 <input 
                   type="text" 
                   name="dhcpNetmask_5" 
@@ -135,9 +135,9 @@ export default function Interface5 () {
                   onChange={e => setDhcpNetmask_5(e.target.value)}  
                   />
               </li>
-              Adress Range:
+              Adress Range
               <li>
-                From:
+                From
                 <input 
                   type="text" 
                   name="addressRangeFrom_5" 
@@ -147,7 +147,7 @@ export default function Interface5 () {
                   />
               </li>
               <li>
-                To:
+                To
                 <input 
                   type="text" 
                   name="addressRangeTo_5" 

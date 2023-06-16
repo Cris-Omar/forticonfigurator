@@ -34,11 +34,11 @@ export default function InterfaceB () {
   return (
 
   <div className="submenu">
-    Port <b>B</b> Configuration
+    Port <b>B</b> configuration
     <form>
       <ol>
         <li>
-          enable:
+          enable
           <input 
               type="checkbox"
               name="int_B"
@@ -67,7 +67,7 @@ export default function InterfaceB () {
             />
         </li>
         <li>
-          Subnetz
+          Subnet
           <input 
             type="text" 
             name="intNetmask_B" 
@@ -78,9 +78,9 @@ export default function InterfaceB () {
         </li>
           <div className="adminaccess">
             <ol>
-            <p>Admin Access:</p>
+            <p>Admin Access</p>
               <li>
-                https:
+                https
                 <input 
                   type="checkbox"
                   name="https_B"
@@ -89,7 +89,7 @@ export default function InterfaceB () {
                   />
               </li>
               <li>
-                Ping:
+                Ping
                 <input 
                   type="checkbox"
                   name="ping_B"
@@ -116,7 +116,7 @@ export default function InterfaceB () {
           <form>
             <ol>
             <li>
-                default Gateway:
+                default Gateway
                 <input 
                   type="text" 
                   name="defaultGateway_B" 
@@ -126,7 +126,7 @@ export default function InterfaceB () {
                   />
               </li>
               <li>
-                Netmask
+               Subnet
                 <input 
                   type="text" 
                   name="dhcpNetmask_B" 
@@ -135,9 +135,9 @@ export default function InterfaceB () {
                   onChange={e => setDhcpNetmask_B(e.target.value)}  
                   />
               </li>
-              Adress Range:
+              Adress Range
               <li>
-                From:
+                From
                 <input 
                   type="text" 
                   name="addressRangeFrom_B" 
@@ -147,7 +147,7 @@ export default function InterfaceB () {
                   />
               </li>
               <li>
-                To:
+                To
                 <input 
                   type="text" 
                   name="addressRangeTo_B" 

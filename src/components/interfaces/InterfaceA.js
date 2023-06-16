@@ -34,11 +34,11 @@ export default function InterfaceA () {
   return (
 
   <div className="submenu">
-    Port <b>A</b> Configuration
+    Port <b>A</b> configuration
     <form>
       <ol>
         <li>
-          enable:
+          enable
           <input 
               type="checkbox"
               name="int_A"
@@ -68,7 +68,7 @@ export default function InterfaceA () {
             />
         </li>
         <li>
-          Subnetz
+         Subnet
           <input 
             type="text" 
             name="intNetmask_A" 
@@ -79,9 +79,9 @@ export default function InterfaceA () {
         </li>
           <div className="adminaccess">
             <ol>
-            <p>Admin Access:</p>
+            <p>Admin Access</p>
               <li>
-                https:
+                https
                 <input 
                   type="checkbox"
                   name="https_A"
@@ -90,7 +90,7 @@ export default function InterfaceA () {
                 />
               </li>
               <li>
-                Ping:
+                Ping
                 <input 
                   type="checkbox"
                   name="ping_A"
@@ -117,7 +117,7 @@ export default function InterfaceA () {
           <form>
             <ol>
             <li>
-                default Gateway:
+                default Gateway
                 <input 
                   type="text" 
                   name="defaultGateway_A" 
@@ -127,7 +127,7 @@ export default function InterfaceA () {
                   />
               </li>
               <li>
-                Netmask
+               Subnet
                 <input 
                   type="text" 
                   name="dhcpNetmask_A" 
@@ -136,9 +136,9 @@ export default function InterfaceA () {
                   onChange={e => setDhcpNetmask_A(e.target.value)}  
                   />
               </li>
-              Adress Range:
+              Adress Range
               <li>
-                From:
+                From
                 <input 
                   type="text" 
                   name="addressRangeFrom_A" 
@@ -148,7 +148,7 @@ export default function InterfaceA () {
                   />
               </li>
               <li>
-                To:
+                To
                 <input 
                   type="text" 
                   name="addressRangeTo_A" 

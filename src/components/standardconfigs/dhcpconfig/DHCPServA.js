@@ -13,6 +13,8 @@ export default function DHCPServ() {
           set start-ip {addressRangeFrom_A}
           set end-ip {addressRangeTo_A}
         next
+        set dhcp-server primary-dns {dnsServer1_A}
+        set dhcp-server secondary-dns {dnsServer2_A}
       end`
   )
 }

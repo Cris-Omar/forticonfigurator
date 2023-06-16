@@ -14,6 +14,8 @@ export default function Interface1 () {
   const {addressRangeFrom_1, setAddressRangeFrom_1} = useContext(GlobalVarContext);
   const {addressRangeTo_1, setAddressRangeTo_1}  = useContext(GlobalVarContext);
   const {dhcpNetmask_1, setDhcpNetmask_1} = useContext(GlobalVarContext);
+  const {dnsServer1_1, setDnsServer1_1} = useContext(GlobalVarContext);
+  const {dnsServer2_1, setDnsServer2_1} = useContext(GlobalVarContext);
 
   const handleCheckboxChange = (event) => {
     const { name, checked } = event.target;
@@ -34,11 +36,11 @@ export default function Interface1 () {
   return (
 
   <div className="submenu">
-    Port <b>1</b> Configuration
+    Port <b>1</b> configuration
     <form>
       <ol>
         <li>
-          enable:
+          enable
           <input 
               type="checkbox"
               name="int_1"
@@ -67,7 +69,7 @@ export default function Interface1 () {
             />
         </li>
         <li>
-          Subnetz
+          Subnet
           <input 
             type="text" 
             name="intNetmask_1" 
@@ -78,9 +80,9 @@ export default function Interface1 () {
         </li>
           <div className="adminaccess">
             <ol>
-            <p>Admin Access:</p>
+            <p>Admin Access</p>
               <li>
-                https:
+                https
                 <input 
                   type="checkbox"
                   name="https_1"
@@ -89,7 +91,7 @@ export default function Interface1 () {
                   />
               </li>
               <li>
-                Ping:
+                Ping
                 <input 
                   type="checkbox"
                   name="ping_1"
@@ -116,7 +118,7 @@ export default function Interface1 () {
           <form>
             <ol>
             <li>
-                default Gateway:
+                default Gateway
                 <input 
                   type="text" 
                   name="defaultGateway_1" 
@@ -126,7 +128,7 @@ export default function Interface1 () {
                   />
               </li>
               <li>
-                Netmask
+                Subnet
                 <input 
                   type="text" 
                   name="dhcpNetmask_1" 
@@ -135,9 +137,9 @@ export default function Interface1 () {
                   onChange={e => setDhcpNetmask_1(e.target.value)}  
                   />
               </li>
-              Adress Range:
+              Adress Range
               <li>
-                From:
+                From
                 <input 
                   type="text" 
                   name="addressRangeFrom_1" 
@@ -147,7 +149,7 @@ export default function Interface1 () {
                   />
               </li>
               <li>
-                To:
+                To
                 <input 
                   type="text" 
                   name="addressRangeTo_1" 
@@ -155,6 +157,26 @@ export default function Interface1 () {
                   value={addressRangeTo_1} 
                   onChange={e => setAddressRangeTo_1(e.target.value)}
                   />
+              </li>
+              <li>
+                DNS Serv. 1 
+                <input 
+                  type="text" 
+                  name="dnsServer1_1" 
+                  value={dnsServer1_1}
+                  placeholder="1.1.1.1"
+                  onChange={e => setDnsServer1_1(e.target.value)} 
+                />
+              </li>
+              <li>
+                DNS Serv. 2 
+                <input 
+                  type="text" 
+                  name="dnsServer2_1" 
+                  value={dnsServer2_1}
+                  placeholder="1.1.1.1"
+                  onChange={e => setDnsServer2_1(e.target.value)} 
+                />
               </li>
             </ol>
           </form>

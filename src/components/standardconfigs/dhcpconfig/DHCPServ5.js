@@ -13,6 +13,8 @@ export default function DHCPServ5() {
           set start-ip {addressRangeFrom_5}
           set end-ip {addressRangeTo_5}
         next
+        set dhcp-server primary-dns {dnsServer1_5}
+        set dhcp-server secondary-dns {dnsServer2_5}
       end`
   )
 }
