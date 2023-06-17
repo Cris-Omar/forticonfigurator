@@ -7,7 +7,6 @@ export default function IntA() {
     set alias {portAlias_A}
     set ip {ipaddress_A} {intNetmask_A}
     set allowaccess {https_A} {ping_A}
-    set status down
     set type physical
     set lldp-transmission enable
     set role lan

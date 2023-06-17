@@ -8,7 +8,6 @@ export default function intB() {
     set alias {portAlias_B}
     set ip {ipaddress_B} {intNetmask_B}
     set allowaccess {https_B} {ping_B}
-    set status down
     set type physical
     set lldp-transmission enable
     set role lan

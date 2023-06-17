@@ -7,7 +7,6 @@ export default function Int3() {
     set alias {portAlias_3}
     set ip {ipaddress_3} {intNetmask_3}
     set allowaccess {https_3} {ping_3}
-    set status down
     set type physical
     set lldp-transmission enable
     set role lan

@@ -101,6 +101,20 @@ export const VarContextProvider = ({ children }) => {
   const [dhcpNetmask_B, setDhcpNetmask_B] =  useState('');
   const [dnsServer1_B, setDnsServer1_B] = useState('');
   const [dnsServer2_B, setDnsServer2_B] = useState('');
+  // port WAN1
+  const [int_WAN1DHCP, setInt_WAN1DHCP ] = useState(false);
+  const [int_WAN1PPPoE, setInt_WAN1PPPoE] = useState (false);
+  const [username_WAN1, setUsername_WAN1] =  useState('');
+  const [password_WAN1, setPassword_WAN1] =  useState('');
+  const [https_WAN1, setHttps_WAN1] =  useState('');
+  const [ping_WAN1, setPing_WAN1] =  useState('');
+  // port WAN2
+  const [int_WAN2DHCP, setInt_WAN2DHCP ] = useState(false);
+  const [ int_WAN2PPPoE, setInt_WAN2PPPoE] = useState (false);
+  const [username_WAN2, setUsername_WAN2] =  useState('');
+  const [password_WAN2, setPassword_WAN2] =  useState('');
+  const [https_WAN2, setHttps_WAN2] =  useState('');
+  const [ping_WAN2, setPing_WAN2] =  useState('');
 
   const contextValues = {
     //port 1
@@ -131,8 +145,10 @@ export const VarContextProvider = ({ children }) => {
     int_B, setInt_B, enableDhcp_B, setEnableDhcp_B, portAlias_B, setPortAlias_B, ipaddress_B, setIpaddress_B, intNetmask_B, setIntNetmask_B, https_B, setHttps_B,
     ping_B, setPing_B, defaultGateway_B, setDefaultGateway_B, addressRangeFrom_B, setAddressRangeFrom_B, addressRangeTo_B, setAddressRangeTo_B, dhcpNetmask_B, setDhcpNetmask_B,
     dnsServer1_B, setDnsServer1_B, dnsServer2_B, setDnsServer2_B,
-    //port WAN
-    int_A, setInt_A
+    //port WAN1
+    int_WAN1DHCP, setInt_WAN1DHCP, int_WAN1PPPoE, setInt_WAN1PPPoE, username_WAN1, setUsername_WAN1, password_WAN1, setPassword_WAN1, https_WAN1, setHttps_WAN1, ping_WAN1, setPing_WAN1,
+    //port WAN2
+    int_WAN2DHCP, setInt_WAN2DHCP, int_WAN2PPPoE, setInt_WAN2PPPoE, username_WAN2, setUsername_WAN2, password_WAN2, setPassword_WAN2, https_WAN2, setHttps_WAN2, ping_WAN2, setPing_WAN2,
   };
 
   return (

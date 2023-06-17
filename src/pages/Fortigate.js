@@ -30,7 +30,10 @@ import IntA from "../components/standardconfigs/portconfig/IntA"
 import DHCPServA from "../components/standardconfigs/dhcpconfig/DHCPServA";
 import IntB from "../components/standardconfigs/portconfig/IntB"
 import DHCPServB from "../components/standardconfigs/dhcpconfig/DHCPServB";
-import IntWAN from "../components/standardconfigs/portconfig/IntWAN"
+import IntWAN1PPPoE from "../components/standardconfigs/portconfig/IntWAN1PPPoE";
+import IntWAN1DHCP from "../components/standardconfigs/portconfig/IntWAN1DHCP";
+import IntWAN2PPPoE from "../components/standardconfigs/portconfig/IntWAN2PPPoE";
+import IntWAN2DHCP from "../components/standardconfigs/portconfig/IntWAN2DHCP";
 
 export default function Fortigate () {
   //config changer
@@ -63,7 +66,8 @@ export default function Fortigate () {
     int_5, enableDhcp_5, portAlias_5,  ipaddress_5, intNetmask_5, https_5, ping_5, defaultGateway_5, addressRangeFrom_5, addressRangeTo_5, dhcpNetmask_5, dnsServer1_5, dnsServer2_5,
     int_A, enableDhcp_A, portAlias_A,  ipaddress_A, intNetmask_A, https_A, ping_A, defaultGateway_A, addressRangeFrom_A, addressRangeTo_A, dhcpNetmask_A, dnsServer1_A, dnsServer2_A,
     int_B, enableDhcp_B, portAlias_B,  ipaddress_B, intNetmask_B, https_B, ping_B, defaultGateway_B, addressRangeFrom_B, addressRangeTo_B, dhcpNetmask_B, dnsServer1_B, dnsServer2_B,
-    int_WAN
+    int_WAN1DHCP, int_WAN1PPPoE, username_WAN1, password_WAN1, https_WAN1,  ping_WAN1,
+    int_WAN2DHCP, int_WAN2PPPoE, username_WAN2, password_WAN2, https_WAN2,  ping_WAN2,
    } = useContext(GlobalVarContext);
 
   //const to handle forti config file
@@ -78,8 +82,6 @@ export default function Fortigate () {
   const [services, setServices] = useState(true);
   const [vpnUser, setVpnUser] = useState(true);
   const [sipAlg, setSipAlg] = useState(true);
-  const [dnsServer1, setDnsServer1] =  useState('');
-  const [dnsServer2, setDnsServer2] =  useState('');
 
   //handleCheckbox state change
   const handleCheckboxChange = (event) => {
@@ -104,10 +106,7 @@ export default function Fortigate () {
       try {
         const response = await axios.get(`http://localhost:3000/configFiles/${selectedConfig}`);
         const regexHostname = new RegExp('{hostname}', 'g');
-        const regexDnsServer1 = new RegExp('{dnsServer1}', 'g');
-        const regexDnsServer2 = new RegExp('{dnsServer2}', 'g');
         const regexIdleTime = new RegExp('{idletimeout}', 'g');
-
         // poort 1
         const regexPortAlias_1 = new RegExp('{portAlias_1}', 'g')
         const regexIpaddress_1 = new RegExp('{ipaddress_1}', 'g')
@@ -118,7 +117,6 @@ export default function Fortigate () {
         const regexAddressRangeTo_1 = new RegExp('{addressRangeTo_1}', 'g')
         const regexDnsServer1_1 = new RegExp('{dnsServer1_1}', 'g')
         const regexDnsServer2_1 = new RegExp('{dnsServer2_1}', 'g')
-        
         // poort 2
         const regexPortAlias_2 = new RegExp('{portAlias_2}', 'g')
         const regexIpaddress_2 = new RegExp('{ipaddress_2}', 'g')
@@ -180,7 +178,12 @@ export default function Fortigate () {
         const regexDnsServer1_B = new RegExp('{dnsServer1_B}', 'g')
         const regexDnsServer2_B = new RegExp('{dnsServer2_B}', 'g')
         // port WAN
+        const regexUsername_WAN1 = new RegExp('{username_WAN1}', 'g')
+        const regexPassword_WAN1 = new RegExp('{password_WAN1}', 'g')
         // Port WAN2
+        const regexUsername_WAN2 = new RegExp('{username_WAN2}', 'g')
+        const regexPassword_WAN2 = new RegExp('{password_WAN2}', 'g')
+
         const replacedText = response.data
           //replace data comming from "Fortigate.js"
           .replace(regexHostname, hostname)
@@ -287,8 +290,21 @@ export default function Fortigate () {
           .replace(regexAddressRangeTo_B, addressRangeTo_B)
           .replace(regexDnsServer1_B, dnsServer1_B)
           .replace(regexDnsServer2_B, dnsServer2_B)
+          // port WAN1
+          .replace('{int_WAN1DHCP}', int_WAN1DHCP ? IntWAN1DHCP : '')
+          .replace('{int_WAN1PPPoE}', int_WAN1PPPoE ? IntWAN1PPPoE : '')
+          .replace(regexUsername_WAN1, username_WAN1)
+          .replace(regexPassword_WAN1, password_WAN1)
+          .replace('{https_WAN1}', https_WAN1 ? "https" : '')
+          .replace('{ping_WAN1}', ping_WAN1 ? "ping" : '')
+          // port WAN2
+          .replace('{int_WAN2DHCP}', int_WAN2DHCP ? IntWAN2DHCP : '')
+          .replace('{int_WAN2PPPoE}', int_WAN2PPPoE ? IntWAN2PPPoE : '')
+          .replace(regexUsername_WAN2, username_WAN2)
+          .replace(regexPassword_WAN2, password_WAN2)
+          .replace('{https_WAN2}', https_WAN2 ? "https" : '')
+          .replace('{ping_WAN2}', ping_WAN2 ? "ping" : '')
 
-          .replace('{int_WAN}', int_WAN ? IntWAN : '')
           setContent(replacedText)
         } catch (error) {
           console.log(error);
@@ -304,7 +320,8 @@ export default function Fortigate () {
     int_5, enableDhcp_5, portAlias_5,  ipaddress_5, intNetmask_5, https_5, ping_5, defaultGateway_5, addressRangeFrom_5, addressRangeTo_5, dhcpNetmask_5, dnsServer1_5, dnsServer2_5,
     int_A, enableDhcp_A, portAlias_A,  ipaddress_A, intNetmask_A, https_A, ping_A, defaultGateway_A, addressRangeFrom_A, addressRangeTo_A, dhcpNetmask_A, dnsServer1_A, dnsServer2_A,
     int_B, enableDhcp_B, portAlias_B,  ipaddress_B, intNetmask_B, https_B, ping_B, defaultGateway_B, addressRangeFrom_B, addressRangeTo_B, dhcpNetmask_B, dnsServer1_B, dnsServer2_B,
-    int_WAN
+    int_WAN1DHCP, int_WAN1PPPoE, username_WAN1, password_WAN1, https_WAN1,  ping_WAN1,
+    int_WAN2DHCP, int_WAN2PPPoE, username_WAN2, password_WAN2, https_WAN2,  ping_WAN2,
    ]);
 
   return(
@@ -404,9 +421,11 @@ export default function Fortigate () {
       <div className="textfile">
         <Link onClick={copy}><Clipboard /></Link>
         <Link onClick={downloadFile} download><Download/></Link>
-        <Link to='#' onClick={() => window.location = 'mailto:'}><Mail /></Link>
-        <Link to="#" onClick={() => (window.location = `mailto:?body=${encodeURIComponent(content)}`)}><Mail /></Link>
-        <Link to={`mailto:?body=${encodeURIComponent(content)}`}><Mail /></Link>
+        
+        <Link to="#" onClick={() => (window.location = `mailto:?subject=${encodeURIComponent(`Fortigate Konfigdatei für Model: ${selectedConfig}`)}
+          &body=${encodeURIComponent('Achtung, keine Sensiblen Daten versenden!')}`)}>
+          <Mail />
+        </Link>
 
         {/*change values of config file*/}
         <div className="rawconfig">

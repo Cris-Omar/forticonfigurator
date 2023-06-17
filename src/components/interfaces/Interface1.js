@@ -32,9 +32,8 @@ export default function Interface1 () {
     break;
     }
   };
-
+  
   return (
-
   <div className="submenu">
     Port <b>1</b> configuration
     <form>

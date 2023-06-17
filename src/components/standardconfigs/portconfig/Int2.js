@@ -7,7 +7,6 @@ export default function Int2() {
     set alias {portAlias_2}
     set ip {ipaddress_2} {intNetmask_2}
     set allowaccess {https_2} {ping_2}
-    set status down
     set type physical
     set lldp-transmission enable
     set role lan

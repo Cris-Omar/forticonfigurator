@@ -8,8 +8,9 @@ config system virtual-switch
 end
 
 #config system interfaces
-#WAN
-{int_WAN}
+#WAN1
+{int_WAN1DHCP}
+{int_WAN1PPPoE}
 #int1
 {int_1}
 {dhcp_1}

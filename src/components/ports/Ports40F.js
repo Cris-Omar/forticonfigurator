@@ -5,7 +5,7 @@ import Interface1 from "../interfaces/Interface1";
 import Interface2 from "../interfaces/Interface2";
 import Interface3 from "../interfaces/Interface3";
 import InterfaceA from "../interfaces/InterfaceA";
-import InterfaceWAN from "../interfaces/InterfaceWAN";
+import InterfaceWAN1 from "../interfaces/InterfaceWAN1";
 
 export default function Ports40F() {
 
@@ -54,7 +54,7 @@ export default function Ports40F() {
         {submenuOpen && selectedPort === 2 && <Interface2 />}
         {submenuOpen && selectedPort === 3 && <Interface3 />}
         {submenuOpen && selectedPort === "A" && <InterfaceA />}
-        {submenuOpen && selectedPort === "WAN" && <InterfaceWAN />}
+        {submenuOpen && selectedPort === "WAN" && <InterfaceWAN1 />}
       </div>
     </div>
   )
