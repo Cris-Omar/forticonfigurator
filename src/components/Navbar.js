@@ -16,7 +16,7 @@ export default function Navbar() {
   const {theme, setTheme} = useThemeContext()
   const [checked, setChecked] = useState(false)
   const handleSwitch = () => {
-    setTheme((state) => (state === "SDAG" ? "Dark" : "SDAG"))
+    setTheme((state) => (state === "Blue" ? "Dark" : "Blue"))
     setChecked(!checked)
   }
 
@@ -29,7 +29,7 @@ export default function Navbar() {
       <div className="navbarWrapper">
         <div className="navigation">
           { isStartPage ? (
-            <p>Smart Dynamic AG</p>
+            <p>Konfigurator</p>
           ) : (
             <Link to="/">Back home</Link>
           )}
@@ -41,7 +41,7 @@ export default function Navbar() {
           {menuOpen && 
             <div className="settingItems">
               <p>change style:</p>
-              <button onClick={handleSwitch}>{theme === "SDAG" ? "Dark" : "SDAG"}</button>
+              <button onClick={handleSwitch}>{theme === "Blue" ? "Dark" : "Blue"}</button>
             </div>
           }
         </div>

@@ -67,73 +67,73 @@
   color: #F8F8F8;
 }
 
-#SDAG a {
+#Blue a {
   color: #F8F8F8;
 }
-#SDAG p {
+#Blue p {
   color: #F8F8F8;
 }
-#SDAG h1 {
+#Blue h1 {
   color: #F8F8F8;
 }
-#SDAG h3 {
+#Blue h3 {
   color: #F8F8F8;
 }
-#SDAG .appWrapper .navbar {
+#Blue .appWrapper .navbar {
   background-color: #B3B1B1;
 }
-#SDAG .appWrapper .navbar .navbarWrapper {
+#Blue .appWrapper .navbar .navbarWrapper {
   background-color: #0054A0;
 }
-#SDAG .appWrapper .navbar .navbarWrapper .navigation a {
+#Blue .appWrapper .navbar .navbarWrapper .navigation a {
   color: #F8F8F8;
 }
-#SDAG .appWrapper .navbar .navbarWrapper .settings svg {
+#Blue .appWrapper .navbar .navbarWrapper .settings svg {
   fill: #F8F8F8;
 }
-#SDAG .appWrapper .navbar .navbarWrapper .settings .settingItems {
+#Blue .appWrapper .navbar .navbarWrapper .settings .settingItems {
   background-color: #0054A0;
 }
-#SDAG .appWrapper .navbar .navbarWrapper .settings .settingItems button {
+#Blue .appWrapper .navbar .navbarWrapper .settings .settingItems button {
   color: #F8F8F8;
   background-color: #0054A0;
 }
-#SDAG .appWrapper .home {
+#Blue .appWrapper .home {
   background-color: #0054A0;
   border-color: #F8F8F8;
   color: #F8F8F8;
 }
-#SDAG .appWrapper .home .devices a {
+#Blue .appWrapper .home .devices a {
   border-color: #F8F8F8;
   background-color: #0489D9;
 }
-#SDAG .appWrapper .home .devices a:hover {
+#Blue .appWrapper .home .devices a:hover {
   background-color: #0054A0;
 }
-#SDAG .appWrapper .home .devices svg {
+#Blue .appWrapper .home .devices svg {
   fill: #F8F8F8;
 }
-#SDAG .appWrapper .fortigate .configuration {
+#Blue .appWrapper .fortigate .configuration {
   border: 2px solid #F8F8F8;
   background-color: #0054A0;
   color: #F8F8F8;
 }
-#SDAG .appWrapper .fortigate .configuration a {
+#Blue .appWrapper .fortigate .configuration a {
   color: #F8F8F8;
 }
-#SDAG .appWrapper .fortigate .textfile {
+#Blue .appWrapper .fortigate .textfile {
   border: 2px solid #0054A0;
   color: #F8F8F8;
   background-color: rgb(179, 177, 177);
 }
-#SDAG .appWrapper .fortigate .textfile button {
+#Blue .appWrapper .fortigate .textfile button {
   background-color: #F8F8F8;
   color: #313536;
 }
-#SDAG .appWrapper .fortigate .textfile svg {
+#Blue .appWrapper .fortigate .textfile svg {
   fill: #F8F8F8;
 }
-#SDAG .appWrapper .fortigate .textfile .rawconfig textarea {
+#Blue .appWrapper .fortigate .textfile .rawconfig textarea {
   border: 2px solid #F8F8F8;
   background-color: #F8F8F8;
   color: #313536;
@@ -151,7 +151,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-position: left 55px;
-  background-image: url("../../public/sdag_standort.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #B3B1B1;

@@ -347,7 +347,7 @@ export default function Fortigate () {
                 type="text" 
                 name="hostname" 
                 value={hostname}
-                placeholder="SDAGFW01"
+                placeholder="FW01"
                 onChange={e => setHostname(e.target.value)} 
               />
             </label>
@@ -357,7 +357,7 @@ export default function Fortigate () {
           {selectedConfig === '60F' && <Ports60F />}
 
           <div className="sdagstandards">
-            <p>Which SDAG standards do you want to activate?</p>
+            <p>Which standards do you want to activate?</p>
             <ol>
               <li>
                 Policies:
@@ -370,7 +370,7 @@ export default function Fortigate () {
               </li>
 
               <li>
-                SDAG Services:
+                Services:
                 <input 
                   type="checkbox"
                   name="services"

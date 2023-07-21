@@ -24,10 +24,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-position: left 55px;
-  background-image: url("../../public/sdag_standort.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #B3B1B1;
+  background-color: $neutral;
 }
 
 // ___________________________ Navbar
