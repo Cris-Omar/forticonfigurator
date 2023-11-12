@@ -105,7 +105,7 @@ export default function Contact() {
           {submitError && <div className="error">{submitError}</div>}
           {showConfirmation ? (
             <div className="confirmationMessage">
-              'confirmation_Success_Message
+              Thank you for your message, it was sent successfully.
             </div>
           ) : null}
 

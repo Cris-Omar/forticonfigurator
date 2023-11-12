@@ -105,12 +105,12 @@ set tcp-portrange 587
 next
 end
 config firewall service group
-  edit "G_S_SDAG"
+  edit "G_S_ServiceGroup"
       set member "DNS" "HTTP" "HTTPS" "IKE" "IMAPS" "NTP" "POP3S" "RDP" "SMTP" "SMTP_587"
   next
 end
 config ips sensor
-  edit "sdag_standard_ips"
+  edit "standard_ips"
       set scan-botnet-connections block
       config entries
           edit 1
@@ -119,7 +119,7 @@ config ips sensor
   next
 end
 config application list
-  edit "sdag_standard_appcontrol"
+  edit "standard_appcontrol"
       set other-application-log enable
       config entries
           edit 1
@@ -129,14 +129,14 @@ config application list
   next
 end
 config user local
-  edit "sdag"
+  edit "standard_user"
       set type password
       set passwd ENC CKbYxkLJf9n5x+jrJu5/8QJKB25Cj/VubuTisNAwZG4ai/AARJaQL4WAq4A6KCuzoNyo32ScRgBTZYjNWrpQvD0YaL5zybI9igAGiupKBooeNZwcCAxWde5OpCwssJO948OvdRmc2OwmDgYWuSqZ19aMLjdxBhxCXNiwBYnEkS7NALz9Vx5LR3G2v1heN9xXyemEYw==
   next
 end
 config user group
   edit "G_S_ClientVPN_Local-Auth"
-      set member "sdag"
+      set member "standard_user"
   next
 end
 config firewall address 
@@ -146,7 +146,7 @@ next
 end
 
 config vpn ssl web portal
-  edit "sdag_standard_portal"
+  edit "standard_portal"
       set tunnel-mode enable
       set keep-alive enable
       set save-password enable
@@ -165,10 +165,10 @@ config vpn ssl settings
   set source-interface "wan1"
   set source-address "all"
   set source-address6 "all"
-  set default-portal "sdag_standard_portal"
+  set default-portal "standard_portal"
 end
 config dnsfilter profile    
-  edit "sdag_standard_dnsfilter"
+  edit "standard_dnsfilter"
       config ftgd-dns
           set options error-allow
           config filters
@@ -225,7 +225,7 @@ config antivirus settings
   set grayware enable
 end
 config antivirus profile
-  edit "sdag_standard_antivirus"
+  edit "standard_antivirus"
       config http
           set options scan
           set outbreak-prevention full-archive
@@ -259,7 +259,7 @@ config antivirus profile
   next
 end
 config webfilter profile
-  edit "sdag_standard_webfilter"
+  edit "standard_webfilter"
       set options block-invalid-url
       config ftgd-wf
           set options error-allow rate-server-ip
@@ -314,7 +314,7 @@ config webfilter profile
   next
 end
 config firewall ssl-ssh-profile
-  edit "sdag_standard_cert-ssl-cert-inspect"
+  edit "standard_cert-ssl-cert-inspect"
     config ssl
       set inspect-all certificate-inspection
     end
@@ -341,7 +341,7 @@ config system global
   set admintimeout {idletimeout}
 end
 
-#Standart SDAG policies:
+#Standard policies:
 {policy}
 config system global
   set admin-sport 8443
@@ -350,8 +350,8 @@ config system global
   set switch-controller enable
   set timezone 26
 end
-#Standart SDAG SIP Alg config:
+#Standard SIP Alg config:
 {sipalg}
 
-#Standart SDAG Services:
+#Standard Services:
 {services}

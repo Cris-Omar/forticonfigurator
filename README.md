@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+ # Welcome to my FortiConfigurator :)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The main goal of my code is that you can "configure" your Fortigate with only a few clicks. Or if you're on the road (train) and offline, you can just run the code locally on your machine and make your config file entirely offline.
 
-## Available Scripts
+Then simply copy the config you generated and paste it in the CLI of your the Fortigate or let the Fortigate start from the config file you generated. its that simple.
 
-In the project directory, you can run:
+I also wanted to implement the other Fortigate products to be configurable from my web app in the near future.
 
-### `npm start`
+I have no professional coding experience, but I like to code Web apps with React JS in my free time.
+I hope my work can serve someone else. This tool is also online at [https://forticonfigurator.com] Feel free to help me make the code better if you like.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Configuration availible for:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Fortigate 40F
+Fortigate 60F
 
-### `npm test`
+### `Function "Copy"`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+When you're finished setting up the config file, you can copy it by clicking the "Copy" icon.
 
-### `npm run build`
+### `Function "Download"`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you click on the Download icon the config will be downloaded locally to your machine as a TXT File.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `Function "Send by Mail"`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+If you click on the Mail Icon, your prefered Mail System will open up so you can paste the code or attach the downloaded file and send it to someone by mail.
 
-### `npm run eject`
+FortiConfigurator Fortigate Configuration Site: [https://forticonfigurator.com/fortigate]
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+FortiConfigurator Contact Form: [https://forticonfigurator.com/contact]
+**I also included an Darkmode, you will find it in the gear icon at the top right**

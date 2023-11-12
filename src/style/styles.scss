@@ -187,6 +187,12 @@ body {
 
 //__________________ Contact
 .contact {
+  h2 {
+    padding: 1em;
+  }
+  h3 {
+    padding-bottom: 1em;
+  }
   .contactForm {
     margin: auto;
     color: $PrimLightColor;
