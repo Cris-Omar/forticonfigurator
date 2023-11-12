@@ -104,7 +104,7 @@ export default function Fortigate () {
 
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/configFiles/${selectedConfig}`);
+        const response = await axios.get(`http://forticonfigurator.com/configFiles/${selectedConfig}`);
         const regexHostname = new RegExp('{hostname}', 'g');
         const regexIdleTime = new RegExp('{idletimeout}', 'g');
         // poort 1
