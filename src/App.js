@@ -9,6 +9,7 @@ import { useThemeContext } from './components/context/ThemeContext';
 import { VarContextProvider } from "./components/context/GlobalVarContext"
 // Compotents
 import Navbar from './components/Navbar';
+import Contact from './pages/Contact';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
                 <Route path="fortigate" element={<Fortigate />} />
+                <Route path="contact" element={<Contact />} />
                 <Route path='*' element={<NoPage />} />
             </Routes>
           </div>

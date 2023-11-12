@@ -29,7 +29,7 @@ export default function Navbar() {
       <div className="navbarWrapper">
         <div className="navigation">
           { isStartPage ? (
-            <p>Konfigurator</p>
+            <p>FortiConfigurator</p>
           ) : (
             <Link to="/">Back home</Link>
           )}
