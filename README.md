@@ -1,6 +1,6 @@
  # Welcome to my FortiConfigurator :)
 
-The main goal of my code is that you can "configure" your Fortigate with only a few clicks. Or if you're on the road (train) and offline, you can just run the code locally on your machine and make your config file entirely offline.
+The main goal of my code is that you can configure your Fortigate with only a few clicks. Or if you're on the road (train) and offline, you can just run the code locally on your machine and make your config file entirely offline.
 
 Then simply copy the config you generated and paste it in the CLI of your the Fortigate or let the Fortigate start from the config file you generated. its that simple.
 
