@@ -9,7 +9,8 @@ export default function Contact() {
   const [messageText, setMessageText] = useState('');
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [reCAPTCHAValue, setReCAPTCHAValue] = useState(null);
-
+  console.log(process.env.REACT_APP_RECAPTCHA_SITE_KEY)
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -58,8 +59,6 @@ export default function Contact() {
         setSubmitting(false);
       }
     }
-
-    console.log(process.env.REACT_APP_RECAPTCHA_SITE_KEY)
   };
 
   const characterLimit = 600;
