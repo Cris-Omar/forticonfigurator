@@ -1,10 +1,10 @@
 export default function VPNUser() {
   return (
-    `#SDAG Standart VPN User:
+    `#Standart VPN User:
     config user local
-        edit "sdag"
+        edit "standard_User"
             set type password
-            set passwd testpw
+            set passwd admin
         next
     end`
   )
