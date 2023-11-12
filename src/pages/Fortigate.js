@@ -416,7 +416,7 @@ export default function Fortigate () {
           </div>
         </form>
         
-        <p>for changes or other requests, please fill out the <Link to="contact">ContactForm</Link></p>
+        <p>for changes or other requests, please fill out the <Link to="/contact">ContactForm</Link></p>
       </div>
 
         {/*functions(download, copy & send Mail) and config file*/}
