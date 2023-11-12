@@ -8,6 +8,9 @@
   h1{
     color: $PrimLightColor;
   }
+  h2{
+    color: $PrimLightColor;
+  }
   h3{
     color: $PrimLightColor;
   }
@@ -59,6 +62,23 @@
       }
     }
 
+    //__________________ Contact
+    .contact {
+      .contactForm {
+        color: aliceblue;
+        background-color: $PrimDarkColor;
+        border-color:$SecDarkColor;
+
+        form {
+          .object {
+            input, textarea {
+              border-bottom: 1px solid rgb(184, 177, 177);
+            }
+          }
+        }
+      }
+    }
+
     //Fortigate Config Site
     .fortigate {  
       .configuration {
@@ -103,6 +123,9 @@
   h1{
     color: $PrimLightColor;
   }
+  h2{
+    color: $PrimLightColor;
+  }
   h3{
     color: $PrimLightColor;
   }
@@ -112,7 +135,7 @@
       background-color: $neutral;
       
       .navbarWrapper {
-        background-color: $PrimSdagColor;
+        background-color: $PrimColor;
         .navigation {
           a {
             color: $PrimLightColor;
@@ -123,10 +146,10 @@
             fill: $PrimLightColor;
           }
           .settingItems {
-            background-color: $PrimSdagColor;
+            background-color: $PrimColor;
             button{
               color: $PrimLightColor;
-              background-color: $PrimSdagColor;
+              background-color: $PrimColor;
             }
           }
         }
@@ -134,16 +157,16 @@
     }
   
     .home {
-      background-color: $PrimSdagColor;
+      background-color: $PrimColor;
       border-color:$PrimLightColor;
       color: $PrimLightColor;
       
       .devices {
         a {
           border-color:$PrimLightColor;
-          background-color: $SecSdagColor;
+          background-color: $SecColor;
           &:hover {
-            background-color: $PrimSdagColor;
+            background-color: $PrimColor;
           }
         }
 
@@ -152,12 +175,29 @@
         }
       }
     }
+    
+    //__________________ Contact
+    .contact {
+      .contactForm {
+        color: aliceblue;
+        background-color: $PrimColor;
+        border-color:$PrimLightColor;
+
+        form {
+          .object {
+            input, textarea {
+              border-bottom: 1px solid rgb(184, 177, 177);
+            }
+          }
+        }
+      }
+    }
 
     //Fortigate Config Site
     .fortigate {  
       .configuration {
         border: 2px solid $PrimLightColor;
-        background-color: $PrimSdagColor;
+        background-color: $PrimColor;
         color: $PrimLightColor;
 
         a {
@@ -166,7 +206,7 @@
       }
         
       .textfile {
-        border: 2px solid $PrimSdagColor;
+        border: 2px solid $PrimColor;
         color: $PrimLightColor;
         background-color: rgb(179, 177, 177);    
         button{

@@ -7,6 +7,9 @@
 #Dark h1 {
   color: #F8F8F8;
 }
+#Dark h2 {
+  color: #F8F8F8;
+}
 #Dark h3 {
   color: #F8F8F8;
 }
@@ -44,6 +47,14 @@
 #Dark .appWrapper .home .devices svg {
   fill: #F8F8F8;
 }
+#Dark .appWrapper .contact .contactForm {
+  color: aliceblue;
+  background-color: #313536;
+  border-color: black;
+}
+#Dark .appWrapper .contact .contactForm form .object input, #Dark .appWrapper .contact .contactForm form .object textarea {
+  border-bottom: 1px solid rgb(184, 177, 177);
+}
 #Dark .appWrapper .fortigate .configuration {
   border: 2px solid black;
   background-color: #313536;
@@ -74,6 +85,9 @@
   color: #F8F8F8;
 }
 #Blue h1 {
+  color: #F8F8F8;
+}
+#Blue h2 {
   color: #F8F8F8;
 }
 #Blue h3 {
@@ -113,6 +127,14 @@
 #Blue .appWrapper .home .devices svg {
   fill: #F8F8F8;
 }
+#Blue .appWrapper .contact .contactForm {
+  color: aliceblue;
+  background-color: #0054A0;
+  border-color: #F8F8F8;
+}
+#Blue .appWrapper .contact .contactForm form .object input, #Blue .appWrapper .contact .contactForm form .object textarea {
+  border-bottom: 1px solid rgb(184, 177, 177);
+}
 #Blue .appWrapper .fortigate .configuration {
   border: 2px solid #F8F8F8;
   background-color: #0054A0;
@@ -144,6 +166,18 @@
   margin: 0px;
   padding: 0px;
 }
+* h1 {
+  color: #F8F8F8;
+}
+* h2 {
+  color: #F8F8F8;
+}
+* h3 {
+  color: #F8F8F8;
+}
+* p {
+  color: #F8F8F8;
+}
 
 body {
   margin: 0;
@@ -157,7 +191,7 @@ body {
 }
 
 .navbar {
-  background-color: #F8F8F8;
+  background-color: #B3B1B1;
   margin-bottom: 40px;
 }
 .navbar .navbarWrapper {
@@ -174,6 +208,7 @@ body {
   padding-left: 80px;
 }
 .navbar .navbarWrapper .navigation p {
+  color: azure;
   font-weight: bold;
   text-decoration: underline;
 }
@@ -274,13 +309,76 @@ body {
   font-size: 13px;
 }
 .home .contact a {
-  text-decoration: none;
+  text-decoration: underline;
   color: white;
 }
 .home .contact a:hover {
   text-decoration: underline;
   font-size: 110%;
   opacity: 0.7;
+}
+
+.contact .contactForm {
+  margin: auto;
+  color: #F8F8F8;
+  padding: 0px 0px 50px;
+  max-width: 37.5em;
+  border-style: solid;
+  border-radius: 50px;
+  background-color: #0054A0;
+}
+.contact .contactForm form {
+  padding: 0em 2em 1em 2em;
+}
+.contact .contactForm form .object {
+  text-align: left;
+}
+.contact .contactForm form .object label {
+  margin: 2em 0em 0.5em 0em;
+  font-weight: bold;
+  text-align: left;
+  display: block;
+  padding-left: 0.5em;
+}
+.contact .contactForm form .object input, .contact .contactForm form .object textarea {
+  border-radius: 0.5em;
+  width: 100%;
+  outline: none;
+  resize: none;
+  border: none;
+  border-bottom: 1px solid rgb(184, 177, 177);
+  text-align: left;
+}
+.contact .contactForm form .object input:focus, .contact .contactForm form .object textarea:focus {
+  filter: brightness(1.2);
+}
+.contact .contactForm form .object .characterCount {
+  font-style: italic;
+}
+.contact .contactForm form .recaptcha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 1em;
+}
+.contact .contactForm form .confirmationMessage {
+  padding: 1em;
+  text-align: center;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 10px;
+}
+.contact .contactForm form button {
+  margin-top: 2.5em;
+  width: 90%;
+  max-width: 8em;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .fortigate {
@@ -427,6 +525,7 @@ body {
   background-color: white;
 }
 .fortigate .textfile svg {
+  fill: white;
   height: 35px;
   width: 35px;
   padding: 0px 10px 0px 20px;

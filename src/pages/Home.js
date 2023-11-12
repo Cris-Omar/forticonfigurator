@@ -9,12 +9,12 @@ export default function Home () {
       <div className="devices">
         <h1>FortiConfigurator</h1>
         <h4>Im a Sysadmin which created this website for a shool project</h4>
-        <p>Select the product for which you want to create a configuration file:</p>
+        <p>Select the product you want to create a configuration:</p>
         <Link to="fortigate"><Arrow /> Fortigate</Link>
       </div>
       
       <div className="contact">
-        <p>changes or other requests, please fill out our <Link to="contact">ContactForm</Link></p>
+        <p>changes or other requests, please fill out the <Link to="contact">ContactForm</Link></p>
       </div>
     </div>
   );

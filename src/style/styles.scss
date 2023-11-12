@@ -1,6 +1,6 @@
 // Variables
-$PrimSdagColor: #0054A0;
-$SecSdagColor: #0489D9;
+$PrimColor: #0054A0;
+$SecColor: #0489D9;
 $PrimDarkColor: #313536;
 $SecDarkColor:black ;
 $PrimLightColor:#F8F8F8;
@@ -14,6 +14,19 @@ $neutralDark: grey;
   text-align: center;
   margin: 0px;
   padding: 0px;
+
+  h1{
+    color: $PrimLightColor;
+  }
+  h2{
+    color: $PrimLightColor;
+  }
+  h3{
+    color: $PrimLightColor;
+  }
+  p{
+    color: $PrimLightColor;
+  }
 }
 
 body {
@@ -31,7 +44,7 @@ body {
 
 // ___________________________ Navbar
 .navbar {
-  background-color: $PrimLightColor;
+  background-color: $neutral;
   margin-bottom: 40px;
 
   .navbarWrapper {
@@ -41,11 +54,12 @@ body {
     padding: 15px;
     margin: auto;
     max-width: 1280px;
-    background-color: $PrimSdagColor;
+    background-color: $PrimColor;
     border-radius: 15px;
     .navigation {
       padding-left: 80px;
       p {
+        color: azure;
         font-weight: bold;
         text-decoration: underline;
       }
@@ -75,7 +89,7 @@ body {
         position: absolute;
         top: 40px;
         right: -10px;
-        background-color: $PrimSdagColor;
+        background-color: $PrimColor;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         padding: 20px;
         border-radius: 4px;
@@ -83,7 +97,7 @@ body {
         button{
           padding: 5px;    
           color: $PrimLightColor;
-          background-color: $PrimSdagColor;
+          background-color: $PrimColor;
           &:hover {
             opacity: 0.7;
           }
@@ -97,7 +111,7 @@ body {
 .home {
   margin: auto;
   max-width: 600px;
-  background-color: $PrimSdagColor;
+  background-color: $PrimColor;
   border-color:$PrimLightColor;
   border-style: solid;
   border-radius: 50px;
@@ -133,7 +147,7 @@ body {
         transition: 0.3s;
         font-size: 110%;
         opacity: 1;
-        background-color: $PrimSdagColor;
+        background-color: $PrimColor;
         font-weight: bold;
       }
     }
@@ -156,12 +170,84 @@ body {
     }
 
     a{
-      text-decoration: none;
+      text-decoration: underline;
       color: white;
       &:hover {
         text-decoration: underline;
         font-size: 110%;
         opacity: 0.7;
+      }
+    }
+  }
+}
+
+//__________________ Contact
+.contact {
+  .contactForm {
+    margin: auto;
+    color: $PrimLightColor;
+    padding: 0px 0px 50px;
+    max-width: 37.5em;
+    border-style: solid;
+    border-radius: 50px;
+    background-color: $PrimColor;
+
+    form {
+      padding: 0em 2em 1em 2em;
+
+      .object {
+        text-align: left;
+        label {
+          margin: 2em 0em 0.5em 0em;
+          font-weight: bold;
+          text-align: left;
+          display: block;
+          padding-left: 0.5em;
+        }
+
+        input, textarea {
+          border-radius: 0.5em;
+          width: 100%;
+          outline: none;
+          resize: none;
+          border: none;
+          border-bottom: 1px solid rgb(184, 177, 177);
+          text-align: left;
+          &:focus {
+            filter: brightness(1.2);
+          }
+        }
+        .characterCount {
+          font-style: italic; 
+        }
+      }
+
+      .recaptcha {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding-top: 1em;
+      }
+
+      .confirmationMessage {
+        padding: 1em;
+        text-align: center;
+        border-radius: 5px;
+        margin: auto;
+        margin-top: 10px;
+      }
+
+      button {
+        margin-top: 2.5em;
+        width: 90%;
+        max-width: 8em;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
       }
     }
   }
@@ -182,7 +268,7 @@ body {
     margin-top: 20px;
     flex: 1;
     border: 2px solid white;
-    background-color: $PrimSdagColor;
+    background-color: $PrimColor;
     border-radius: 50px 0px 0px 50px;
     padding: 20px;
     color: white;
@@ -303,7 +389,7 @@ body {
     margin-top: 20px;
     max-width: 400px;
     height: 70vh;
-    border: 2px solid $PrimSdagColor;
+    border: 2px solid $PrimColor;
     border-radius: 0px 25px 25px 0px;
     color: white;
     background-color: rgb(179, 177, 177);
@@ -326,6 +412,7 @@ body {
     }
 
     svg {
+      fill: white;
       height: 35px;
       width: 35px;
       padding: 0px 10px 0px 20px;
@@ -365,78 +452,6 @@ body {
   }
 }
 
-//__________________ Contact
-.contact {
-  @each $property, $value in $defaultSectionSettings {
-    #{$property}: $value;
-  }
-
-  .contactForm {
-    max-width: 37.5em;
-    margin: auto;
-    text-align: center; /* Center-align the content horizontally */
-
-    form {
-      padding: 0em 2em 1em 2em;
-
-      .object {
-
-        label {
-          margin: 2em 0em 0.5em 0em;
-          font-weight: bold;
-          text-align: left;
-          display: block;
-          padding-left: 0.5em;
-        }
-
-        input, textarea {
-          border-radius: 0.5em;
-          width: 100%;
-          outline: none;
-          resize: none;
-          border: none;
-          border-bottom: 1px solid rgb(184, 177, 177);
-
-          &:focus {
-            filter: brightness(1.2);
-          }
-        }
-        .characterCount {
-          font-style: italic; 
-        }
-      }
-
-      .recaptcha {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-        padding-top: 1em;
-      }
-
-      .confirmationMessage {
-        padding: 1em;
-        text-align: center;
-        border-radius: 5px;
-        margin: auto;
-        margin-top: 10px;
-      }
-
-      button {
-        margin-top: 2.5em;
-        width: 90%;
-        max-width: 8em;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 20px;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-      }
-    }
-  }
-}
-
 //____________________________ NoPage
 .nopage {
   padding: 50px;
@@ -447,7 +462,7 @@ body {
 
   a {
     text-decoration: none;
-    color: $SecSdagColor;
+    color: $SecColor;
     &:hover{
       text-decoration: underline;
       cursor: pointer;

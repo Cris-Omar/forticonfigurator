@@ -1,51 +1,59 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useThemeContext } from "../components/context/ThemeContext";
-import Gear from "../components/icons/Gear"
+import Gear from "../components/icons/Gear";
 
 export default function Navbar() {
-  //Settingshandling
+  // Settings handling
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenuClick = () => {
     setMenuOpen(!menuOpen);
   };
 
-  //Themehandling
-  const {theme, setTheme} = useThemeContext()
-  const [checked, setChecked] = useState(false)
+  // Theme handling
+  const { theme, setTheme } = useThemeContext();
+
+  // Function to switch theme
   const handleSwitch = () => {
-    setTheme((state) => (state === "Blue" ? "Dark" : "Blue"))
-    setChecked(!checked)
-  }
+    setTheme((state) => (state === "Blue" ? "Dark" : "Blue"));
+  };
 
-  //use Location for Logo or Back Home Component
-  const location = useLocation()
-  const isStartPage = location.pathname === "/"
+  // Use Location for Logo or Back Home Component
+  const location = useLocation();
+  const isStartPage = location.pathname === "/";
 
-  return(
+  // Set the default theme when the component is mounted
+  useEffect(() => {
+    if (theme !== "Dark" && theme !== "Blue") {
+      setTheme("Blue"); // Set your default theme here (e.g., "Dark")
+    }
+  }, [theme, setTheme]);
+
+  return (
     <div className="navbar" id={theme}>
       <div className="navbarWrapper">
         <div className="navigation">
-          { isStartPage ? (
+          {isStartPage ? (
             <p>FortiConfigurator</p>
           ) : (
             <Link to="/">Back home</Link>
           )}
-
         </div>
 
         <div className="settings" onClick={handleMenuClick}>
-          <Gear/>
-          {menuOpen && 
+          <Gear />
+          {menuOpen && (
             <div className="settingItems">
               <p>change style:</p>
-              <button onClick={handleSwitch}>{theme === "Blue" ? "Dark" : "Blue"}</button>
+              <button onClick={handleSwitch}>
+                {theme === "Blue" ? "Dark" : "Blue"}
+              </button>
             </div>
-          }
+          )}
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -10,7 +10,6 @@ export default function Contact() {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [reCAPTCHAValue, setReCAPTCHAValue] = useState(null);
 
-  const reCAPTCHAKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,6 +19,7 @@ export default function Contact() {
     const name = formData.get('name');
     const subject = formData.get('subject');
     const message = formData.get('message');
+
     if (reCAPTCHAValue) {
       try {
         setSubmitting(true);
@@ -79,7 +79,7 @@ export default function Contact() {
             <input type="email" name="email" required maxLength={100} />
           </div>
           <div className="object">
-            <label>{('subject')}</label>
+            <label>subject</label>
             <input type="text" name="subject" required maxLength={120} />
           </div>
 
@@ -109,8 +109,9 @@ export default function Contact() {
           ) : null}
           
           <div className='recaptcha'>
+
             <ReCAPTCHA
-              sitekey={reCAPTCHAKey}
+              sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
               onChange={(value) => {
                 // Store the reCAPTCHA value when it changes
                 setReCAPTCHAValue(value);
