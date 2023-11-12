@@ -10,7 +10,6 @@ export default function Contact() {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [reCAPTCHAValue, setReCAPTCHAValue] = useState(null);
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -59,6 +58,8 @@ export default function Contact() {
         setSubmitting(false);
       }
     }
+
+    console.log(process.env.REACT_APP_RECAPTCHA_SITE_KEY)
   };
 
   const characterLimit = 600;
@@ -99,6 +100,7 @@ export default function Contact() {
                 <span className="characterLimitExceeded"> - Limit Exceeded</span>
               )}
             </span>
+
           </div>
 
           {submitError && <div className="error">{submitError}</div>}
@@ -107,9 +109,8 @@ export default function Contact() {
               'confirmation_Success_Message
             </div>
           ) : null}
-          
-          <div className='recaptcha'>
 
+          <div className='recaptcha'>
             <ReCAPTCHA
               sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
               onChange={(value) => {

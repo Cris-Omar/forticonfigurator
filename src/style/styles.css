@@ -14,7 +14,7 @@
   color: #F8F8F8;
 }
 #Dark .navbar {
-  background-color: grey;
+  background-color: #B3B1B1;
 }
 #Dark .navbar .navbarWrapper {
   background-color: #313536;
@@ -30,7 +30,7 @@
 }
 #Dark .navbar .navbarWrapper .settings .settingItems button {
   color: #F8F8F8;
-  background-color: #313536;
+  background-color: #0054A0;
 }
 #Dark .appWrapper .home {
   background-color: #313536;
@@ -110,7 +110,7 @@
 }
 #Blue .appWrapper .navbar .navbarWrapper .settings .settingItems button {
   color: #F8F8F8;
-  background-color: #0054A0;
+  background-color: #313536;
 }
 #Blue .appWrapper .home {
   background-color: #0054A0;
@@ -243,6 +243,9 @@ body {
   padding: 20px;
   border-radius: 4px;
   width: 100px;
+}
+.navbar .navbarWrapper .settings .settingItems .settingObject {
+  padding-bottom: 1em;
 }
 .navbar .navbarWrapper .settings .settingItems button {
   padding: 5px;

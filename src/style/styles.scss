@@ -94,6 +94,10 @@ body {
         padding: 20px;
         border-radius: 4px;
         width: 100px;
+        .settingObject{
+          padding-bottom: 1em;
+        }
+        
         button{
           padding: 5px;    
           color: $PrimLightColor;

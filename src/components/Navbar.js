@@ -46,9 +46,12 @@ export default function Navbar() {
           <Gear />
           {menuOpen && (
             <div className="settingItems">
-              <p>change style:</p>
+              <div className="settingObject">
+                <Link to="/contact">ContactForm</Link>
+              </div>
+
               <button onClick={handleSwitch}>
-                {theme === "Blue" ? "Dark" : "Blue"}
+                Change Style
               </button>
             </div>
           )}

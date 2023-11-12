@@ -16,11 +16,11 @@
   }
 
   .navbar {
-    background-color: $neutralDark;
+    background-color: $neutral;
     
     .navbarWrapper {
-
       background-color: $PrimDarkColor;
+      
       .navigation {
         a {
           color: $PrimLightColor;
@@ -34,7 +34,7 @@
           background-color: $PrimDarkColor;
           button{
             color: $PrimLightColor;
-            background-color: $PrimDarkColor;
+            background-color: $PrimColor;
           }
         }
       }
@@ -149,7 +149,7 @@
             background-color: $PrimColor;
             button{
               color: $PrimLightColor;
-              background-color: $PrimColor;
+              background-color: $PrimDarkColor;
             }
           }
         }

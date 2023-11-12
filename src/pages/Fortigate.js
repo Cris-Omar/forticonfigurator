@@ -415,6 +415,8 @@ export default function Fortigate () {
             </ol>
           </div>
         </form>
+        
+        <p>for changes or other requests, please fill out the <Link to="contact">ContactForm</Link></p>
       </div>
 
         {/*functions(download, copy & send Mail) and config file*/}
@@ -429,7 +431,7 @@ export default function Fortigate () {
 
         {/*change values of config file*/}
         <div className="rawconfig">
-          <h3>Konfig für {selectedConfig}</h3>
+          <h3>ConfigFile for "Fortigate {selectedConfig}"</h3>
           <textarea type="text" spellCheck="false" value={content} onChange={inputHandler} />
         </div>
       </div>

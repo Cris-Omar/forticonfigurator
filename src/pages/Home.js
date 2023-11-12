@@ -14,7 +14,7 @@ export default function Home () {
       </div>
       
       <div className="contact">
-        <p>changes or other requests, please fill out the <Link to="contact">ContactForm</Link></p>
+        <p>for changes or other requests, please fill out the <Link to="contact">ContactForm</Link></p>
       </div>
     </div>
   );
