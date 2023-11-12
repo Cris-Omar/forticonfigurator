@@ -104,7 +104,7 @@ export default function Fortigate () {
 
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://forticonfigurator.com/configFiles/${selectedConfig}`);
+        const response = await axios.get(`https://forticonfigurator.com/configFiles/${selectedConfig}`);
         const regexHostname = new RegExp('{hostname}', 'g');
         const regexIdleTime = new RegExp('{idletimeout}', 'g');
         // poort 1
@@ -408,7 +408,7 @@ export default function Fortigate () {
               <input type="text"
                 name="idleTime" 
                 value={idleTime} 
-                placeholder="in minuten"
+                placeholder="in minutes"
                 onChange={e => setIdleTime(e.target.value)} 
               />
               </li>
