@@ -8,8 +8,7 @@ export default function Home () {
     <div className="home">
       <div className="devices">
         <h1>FortiConfigurator</h1>
-        <h4>Im a Sysadmin which created this website for a shool project</h4>
-        <p>Select the product you want to create a configuration:</p>
+        <p>Select the product you want to create a config file:</p>
         <Link to="fortigate"><Arrow /> Fortigate</Link>
       </div>
       
